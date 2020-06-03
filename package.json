@@ -1,5 +1,5 @@
 {
-  "name": "sitemap-generator-genslein",
+  "name": "sitemap-generator",
   "version": "1.0.0",
   "description": "Easily create XML sitemaps for your website.",
   "homepage": "https://github.com/lgraubner/sitemap-generator",
