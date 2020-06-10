@@ -8,10 +8,15 @@ module.exports = function SitemapStream() {
   const tmpPath = path.join(os.tmpdir(), `sitemap_${rand(10)}`);
   const stream = fs.createWriteStream(tmpPath);
 
-  stream.write('<?xml version="1.0" encoding="utf-8" standalone="yes" ?>');
-  stream.write(
-    '\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-  );
+  stream.write('<?xml version="1.0" encoding="utf-8" standalone="yes" ?>\n');
+  const urlSetProperties = `<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="
+            http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">`;
+  stream.write(urlSetProperties);
 
   const getPath = () => tmpPath;
 
